@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Dividida con Bootstrap</title>
+    <!-- Incluye los archivos CSS de Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Estilos personalizados -->
+    <style>
+        /* Estilo para las secciones divididas */
+        .split-section {
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+        }
+        /* Estilo para la parte izquierda */
+        .left-section {
+            background-image: url('img/declaraciones.png');
+        }
+        /* Estilo para la parte derecha */
+        .right-section {
+            background-image: url('img/facturas.png');
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Parte Izquierda en pantallas grandes -->
+            <div class="col-md-6 split-section left-section d-none d-md-block">
+                <div class="text-center">
+                    <h1>Texto en la parte izquierda</h1>
+                    <p>Descripción o contenido aquí</p>
+                </div>
+            </div>
+            <!-- Parte Derecha en pantallas grandes -->
+            <div class="col-md-6 split-section right-section d-none d-md-block">
+                <div class="text-center">
+                    <h1>Texto en la parte derecha</h1>
+                    <p>Descripción o contenido aquí</p>
+                </div>
+            </div>
+            <!-- Parte Izquierda en pantallas pequeñas (móviles) -->
+            <div class="col-12 split-section left-section d-block d-md-none">
+                <div class="text-center">
+                    <h1>Texto en la parte izquierda</h1>
+                    <p>Descripción o contenido aquí</p>
+                </div>
+            </div>
+            <!-- Parte Derecha en pantallas pequeñas (móviles) -->
+            <div class="col-12 split-section right-section d-block d-md-none">
+                <div class="text-center">
+                    <h1>Texto en la parte derecha</h1>
+                    <p>Descripción o contenido aquí</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Incluye el archivo JavaScript de Bootstrap y jQuery (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

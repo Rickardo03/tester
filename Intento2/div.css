@@ -1,0 +1,15 @@
+/* Estilos para la primera sección */
+.section1 {
+    background-image: url('img/declaraciones.png'); /* Reemplaza 'imagen1.jpg' con la URL de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Color de texto en la primera sección */
+}
+
+/* Estilos para la segunda sección */
+.section2 {
+    background-image: url('img/facturas.png'); /* Reemplaza 'imagen2.jpg' con la URL de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Color de texto en la segunda sección */
+}

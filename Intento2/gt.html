@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Declaraciones Mensuales</title>
+    <link rel="stylesheet" href="gt.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simulador de Declaraciones Mensuales</h1>
+        <form>
+            <label for="rfc">RFC:</label>
+            <input type="text" id="rfc" name="rfc" required>
+
+            <label for="periodo">Período:</label>
+            <select id="periodo" name="periodo" required>
+                <option value="ene">Enero</option>
+                <option value="feb">Febrero</option>
+                <!-- Otras opciones de meses aquí -->
+            </select>
+
+            <label for="ingresos">Ingresos:</label>
+            <input type="number" id="ingresos" name="ingresos" required>
+
+            <label for="gastos">Gastos:</label>
+            <input type="number" id="gastos" name="gastos" required>
+
+            <button type="submit">Calcular</button>
+        </form>
+    </div>
+    <div id="resultado"></div>
+    <script>
+        // Función para calcular la cantidad a pagar o el saldo a favor
+        function calcularCantidadAPagar() {
+            // Obtén los valores ingresados por el usuario
+            const rfc = document.getElementById("rfc").value;
+            const periodo = document.getElementById("periodo").value;
+            const ingresos = parseFloat(document.getElementById("ingresos").value);
+            const gastos = parseFloat(document.getElementById("gastos").value);
+    
+            // Realiza el cálculo (en este caso, un cálculo simple de ejemplo)
+            const resultadoCalculo = ingresos - gastos;
+    
+            // Muestra el resultado en el elemento div
+            const resultadoElement = document.getElementById("resultado");
+            resultadoElement.innerHTML = `
+                <h2>Resultado para ${rfc}</h2>
+                <p>Período: ${periodo}</p>
+                <p>Ingresos: $${ingresos}</p>
+                <p>Gastos: $${gastos}</p>
+                <p>Cantidad a pagar o saldo a favor: $${resultadoCalculo}</p>
+            `;
+        }
+    
+        // Agrega un evento para que se ejecute la función al enviar el formulario
+        document.querySelector("form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Evita que se envíe el formulario automáticamente
+            calcularCantidadAPagar();
+        });
+    </script>
+    
+</body>
+</html>
